@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos | Regula T</title>
+    <link rel="icon" type="image/png" href="img/logoo.png">
+    <link rel="stylesheet" href="css/style_.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">Regula <span>T.</span></a>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="cursos.html" class="active">Cursos</a>
+        <a href="evaluacion.html">Evaluación</a>
+        <a href="progreso.html">Mi progreso</a>
+        <a href="nosotros.html">Nosotros</a>
+    </nav>
+</header>
+
+<main class="page-container">
+
+    <section class="page-heading">
+        <span class="etiqueta">APRENDE ALGO NUEVO</span>
+        <h1>Explora nuestros cursos 📚</h1>
+        <p>Encuentra un tema, aprende y pon a prueba tus conocimientos.</p>
+    </section>
+
+    <div class="filters">
+        <input type="search" id="buscador"
+               placeholder="Buscar un curso...">
+
+        <select id="filtro">
+            <option value="todos">Todas las materias</option>
+            <option value="matematicas">Matemáticas</option>
+            <option value="espanol">Español</option>
+            <option value="ciencias">Ciencias</option>
+            <option value="ingles">Inglés</option>
+        </select>
+    </div>
+
+    <section class="grid" id="listaCursos">
+
+        <!-- ================= MATEMÁTICAS ================= -->
+
+        <article class="card course-card" data-materia="matematicas">
+            <div class="course-banner math">
+                <img src="img/Matematicas.png" alt="Matemáticas">
+            </div>
+            <span class="tag">Matemáticas</span>
+            <h3>Operaciones básicas</h3>
+            <p>Repasa sumas, restas, multiplicaciones y divisiones.</p>
+            <button class="btn" onclick="abrirCurso('matematicas')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="matematicas">
+            <div class="course-banner math">
+                <img src="img/Matematicas.png" alt="Fracciones">
+            </div>
+            <span class="tag">Matemáticas</span>
+            <h3>Fracciones y decimales</h3>
+            <p>Aprende a comparar, convertir y realizar operaciones con fracciones y decimales.</p>
+            <button class="btn" onclick="abrirCurso('fracciones')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="matematicas">
+            <div class="course-banner math">
+                <img src="img/Matematicas.png" alt="Álgebra">
+            </div>
+            <span class="tag">Matemáticas</span>
+            <h3>Álgebra y ecuaciones</h3>
+            <p>Resuelve expresiones algebraicas y ecuaciones de primer grado.</p>
+            <button class="btn" onclick="abrirCurso('algebra')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="matematicas">
+            <div class="course-banner math">
+                <img src="img/Matematicas.png" alt="Geometría">
+            </div>
+            <span class="tag">Matemáticas</span>
+            <h3>Geometría y áreas</h3>
+            <p>Identifica figuras geométricas y calcula perímetros, áreas y volúmenes.</p>
+            <button class="btn" onclick="abrirCurso('geometria')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="matematicas">
+            <div class="course-banner math">
+                <img src="img/Matematicas.png" alt="Proporcionalidad">
+            </div>
+            <span class="tag">Matemáticas</span>
+            <h3>Porcentajes y proporcionalidad</h3>
+            <p>Resuelve problemas con porcentajes, razones, proporciones y regla de tres.</p>
+            <button class="btn" onclick="abrirCurso('porcentajes')">
+                Comenzar curso
+            </button>
+        </article>
+
+
+        <!-- ================= ESPAÑOL ================= -->
+
+        <article class="card course-card" data-materia="espanol">
+            <div class="course-banner spanish">
+                <img src="img/espa.png" alt="Español">
+            </div>
+            <span class="tag">Español</span>
+            <h3>Comprensión lectora</h3>
+            <p>Identifica ideas principales, secundarias y comprende diferentes textos.</p>
+            <button class="btn" onclick="abrirCurso('espanol')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="espanol">
+            <div class="course-banner spanish">
+                <img src="img/espa.png" alt="Ortografía">
+            </div>
+            <span class="tag">Español</span>
+            <h3>Ortografía y acentuación</h3>
+            <p>Practica las reglas de acentuación, el uso de las letras y los signos de puntuación.</p>
+            <button class="btn" onclick="abrirCurso('ortografia')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="espanol">
+            <div class="course-banner spanish">
+                <img src="img/espa.png" alt="Tipos de textos">
+            </div>
+            <span class="tag">Español</span>
+            <h3>Tipos de textos</h3>
+            <p>Reconoce textos narrativos, descriptivos, expositivos y argumentativos.</p>
+            <button class="btn" onclick="abrirCurso('textos')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="espanol">
+            <div class="course-banner spanish">
+                <img src="img/espa.png" alt="Gramática">
+            </div>
+            <span class="tag">Español</span>
+            <h3>Gramática y clases de palabras</h3>
+            <p>Identifica sustantivos, verbos, adjetivos, pronombres y adverbios.</p>
+            <button class="btn" onclick="abrirCurso('gramatica')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="espanol">
+            <div class="course-banner spanish">
+                <img src="img/espa.png" alt="Redacción">
+            </div>
+            <span class="tag">Español</span>
+            <h3>Redacción de textos</h3>
+            <p>Organiza tus ideas y aprende a escribir resúmenes, ensayos y textos coherentes.</p>
+            <button class="btn" onclick="abrirCurso('redaccion')">
+                Comenzar curso
+            </button>
+        </article>
+
+
+        <!-- ================= CIENCIAS ================= -->
+
+        <article class="card course-card" data-materia="ciencias">
+            <div class="course-banner science">
+                <img src="img/ciencias.png" alt="Ciencias">
+            </div>
+            <span class="tag">Ciencias</span>
+            <h3>El cuerpo humano</h3>
+            <p>Conoce los principales sistemas del cuerpo y sus funciones.</p>
+            <button class="btn" onclick="abrirCurso('ciencias')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="ciencias">
+            <div class="course-banner science">
+                <img src="img/ciencias.png" alt="Células">
+            </div>
+            <span class="tag">Ciencias</span>
+            <h3>La célula y sus funciones</h3>
+            <p>Descubre las partes de la célula y las diferencias entre células animales y vegetales.</p>
+            <button class="btn" onclick="abrirCurso('celula')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="ciencias">
+            <div class="course-banner science">
+                <img src="img/ciencias.png" alt="Ecosistemas">
+            </div>
+            <span class="tag">Ciencias</span>
+            <h3>Ecosistemas y biodiversidad</h3>
+            <p>Aprende cómo interactúan los seres vivos con su ambiente y cómo cuidar la biodiversidad.</p>
+            <button class="btn" onclick="abrirCurso('ecosistemas')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="ciencias">
+            <div class="course-banner science">
+                <img src="img/ciencias.png" alt="Materia">
+            </div>
+            <span class="tag">Ciencias</span>
+            <h3>La materia y sus cambios</h3>
+            <p>Identifica los estados de la materia, sus propiedades y los cambios físicos y químicos.</p>
+            <button class="btn" onclick="abrirCurso('materia')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="ciencias">
+            <div class="course-banner science">
+                <img src="img/ciencias.png" alt="Energía">
+            </div>
+            <span class="tag">Ciencias</span>
+            <h3>Energía y sus transformaciones</h3>
+            <p>Conoce las formas de energía, sus transformaciones y las fuentes renovables.</p>
+            <button class="btn" onclick="abrirCurso('energia')">
+                Comenzar curso
+            </button>
+        </article>
+
+
+        <!-- ================= INGLÉS ================= -->
+
+        <article class="card course-card" data-materia="ingles">
+            <div class="course-banner english">
+                <img src="img/ingles.png" alt="Inglés">
+            </div>
+            <span class="tag">Inglés</span>
+            <h3>Inglés básico</h3>
+            <p>Aprende vocabulario y expresiones cotidianas.</p>
+            <button class="btn" onclick="abrirCurso('ingles')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="ingles">
+            <div class="course-banner english">
+                <img src="img/ingles.png" alt="Verbo to be">
+            </div>
+            <span class="tag">Inglés</span>
+            <h3>Verb to be</h3>
+            <p>Aprende a utilizar am, is y are para construir oraciones y preguntas.</p>
+            <button class="btn" onclick="abrirCurso('tobe')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="ingles">
+            <div class="course-banner english">
+                <img src="img/ingles.png" alt="Presente simple">
+            </div>
+            <span class="tag">Inglés</span>
+            <h3>Simple present</h3>
+            <p>Expresa rutinas, hábitos y actividades cotidianas en presente simple.</p>
+            <button class="btn" onclick="abrirCurso('present')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="ingles">
+            <div class="course-banner english">
+                <img src="img/ingles.png" alt="Pasado simple">
+            </div>
+            <span class="tag">Inglés</span>
+            <h3>Simple past</h3>
+            <p>Aprende a hablar de experiencias y acontecimientos del pasado.</p>
+            <button class="btn" onclick="abrirCurso('past')">
+                Comenzar curso
+            </button>
+        </article>
+
+        <article class="card course-card" data-materia="ingles">
+            <div class="course-banner english">
+                <img src="img/ingles.png" alt="Vocabulario en inglés">
+            </div>
+            <span class="tag">Inglés</span>
+            <h3>Vocabulario y conversaciones</h3>
+            <p>Practica saludos, preguntas, lugares, alimentos y conversaciones sencillas.</p>
+            <button class="btn" onclick="abrirCurso('vocabulario')">
+                Comenzar curso
+            </button>
+        </article>
+
+    </section>
+
+    <p id="sinResultados" class="notice" hidden>
+        No se encontraron cursos con esos criterios.
+    </p>
+
+    <section id="zonaCurso" class="card lesson" hidden>
+        <button class="close-btn" onclick="cerrarCurso()">✕ Cerrar</button>
+        <div id="contenidoCurso"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Regula T | Proyecto Laboral</p>
+</footer>
+
+</body>
+</html>

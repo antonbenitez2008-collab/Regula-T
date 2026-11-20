@@ -1,0 +1,1015 @@
+/* =========================================
+   REGULA T | HOJA DE ESTILOS LIMPIA
+   Reglas duplicadas unificadas
+========================================= */
+
+/* 1. CONFIGURACIÓN GENERAL */
+:root {
+    --primary: #e84a8a;
+    --primary-dark: #bd2869;
+    --secondary: #8064d8;
+    --background: #fff8fc;
+    --surface: #ffffff;
+    --text: #30263a;
+    --muted: #796e82;
+    --border: #f0e3ed;
+    --shadow: 0 8px 28px rgba(83, 42, 83, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    animation: aparecer 0.8s ease-out;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+.btn {
+    cursor: pointer;
+}
+
+/* 2. MENÚ DE NAVEGACIÓN */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 5%;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: var(--text);
+    font-size: 2.5rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.navbar nav a {
+    position: relative;
+    color: var(--muted);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--primary);
+}
+
+.navbar nav a.active {
+    font-weight: bold;
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+    transform: scaleX(1);
+}
+
+/* 3. PORTADA */
+.hero {
+    min-height: calc(100vh - 130px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px 5%;
+    background: linear-gradient(135deg, #fff1f7, #f3efff);
+}
+
+.hero-text {
+    max-width: 600px;
+    animation: entrarTexto 0.9s ease-out both;
+}
+
+.hero-text h1 {
+    font-size: clamp(28px, 3.5vw, 48px);
+    line-height: 1.15;
+    margin: 18px 0;
+}
+
+.hero-text h1 span {
+    color: var(--primary);
+}
+
+.hero-text p {
+    max-width: 570px;
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 30px;
+    background: #ffe3ef;
+    color: var(--primary-dark);
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero-card {
+    width: 100%;
+    max-width: 450px;
+    min-height: 350px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px;
+    border-radius: 28px;
+    background: #fff;
+    box-shadow: var(--shadow);
+    text-align: center;
+    animation: entrarTarjeta 1s ease-out both;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(83, 42, 83, 0.15);
+}
+
+.hero-card h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.hero-icon {
+    margin-bottom: 12px;
+    font-size: 5rem;
+}
+
+.hero-card p {
+    margin: 12px 0 25px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.mini-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.mini-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-stats strong {
+    color: var(--primary);
+    font-size: 28px;
+}
+
+.mini-stats small {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* 4. BOTONES */
+.btn {
+    display: inline-block;
+    margin: 4px 5px 4px 0;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    background: var(--primary-dark);
+    box-shadow: 0 8px 20px rgba(232, 74, 138, 0.25);
+}
+
+.btn-secundario {
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--primary-dark);
+}
+
+.btn-secundario:hover {
+    background: #ffe3ef;
+}
+
+.btn-light {
+    background: #fff;
+    color: var(--primary-dark);
+}
+
+.btn-danger {
+    margin: 20px 0;
+    background: #b93850;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-danger:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(185, 56, 80, 0.3);
+}
+
+.close-btn {
+    float: right;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #f9eaf2;
+}
+
+/* 5. SECCIONES Y TARJETAS */
+.section {
+    padding: 75px 8%;
+}
+
+.section-soft {
+    background: #fff0f7;
+}
+
+.section-title,
+.page-heading {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.section-title h2,
+.page-heading h1 {
+    margin: 14px 0;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.section-title p,
+.page-heading p {
+    color: var(--muted);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card {
+    min-width: 0;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.card h3 {
+    margin: 12px 0 8px;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+.icon {
+    margin-bottom: 10px;
+    font-size: 2.3rem;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+.cta {
+    margin: 30px 8% 70px;
+    padding: 55px 25px;
+    border-radius: 25px;
+    background: linear-gradient(120deg, #e84a8a, #8064d8);
+    color: #fff;
+    text-align: center;
+}
+
+.cta h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.cta p {
+    margin-bottom: 20px;
+    color: #fff1f8;
+}
+
+/* 6. PÁGINAS INTERNAS */
+.page-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 55px 25px;
+}
+
+.page-heading {
+    margin-bottom: 40px;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #e5d8e5;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px #fce0ed;
+}
+
+.course-banner {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    font-size: 3.5rem;
+}
+
+.course-banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    object-fit: contain;
+}
+
+.math {
+    background: #eee8ff;
+}
+
+.spanish {
+    background: #ffe5ed;
+}
+
+.science {
+    background: #e0f7ed;
+}
+
+.english {
+    background: #e0efff;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #ffe3ef;
+    color: var(--primary-dark);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.course-card .btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.lesson {
+    margin-top: 35px;
+    line-height: 1.8;
+}
+
+.lesson h2 {
+    margin: 18px 0;
+}
+
+.lesson h3 {
+    margin-top: 20px;
+}
+
+.lesson ul {
+    margin: 12px 0;
+    padding-left: 22px;
+}
+
+.lesson .btn {
+    margin-top: 15px;
+}
+
+/* 7. ANIMACIONES DE TARJETAS DE CURSOS */
+.course-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.course-card[data-materia="matematicas"] {
+    animation: entrarMatematicas 0.6s ease-out both;
+}
+
+.course-card[data-materia="matematicas"]:hover {
+    transform: scale(1.03) translateY(-5px);
+    border-color: #8064d8;
+}
+
+.course-card[data-materia="espanol"] {
+    animation: entrarEspanol 0.6s ease-out both;
+}
+
+.course-card[data-materia="espanol"]:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 15px 30px rgba(232, 74, 138, 0.2);
+}
+
+.course-card[data-materia="ciencias"] {
+    animation: entrarCiencias 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.course-card[data-materia="ciencias"]:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.course-card[data-materia="ingles"] {
+    animation: entrarIngles 0.6s ease-out both;
+}
+
+.course-card[data-materia="ingles"]:hover {
+    transform: scale(1.05);
+    filter: brightness(1.03);
+}
+
+#zonaCurso:not([hidden]) {
+    animation: abrirLeccionUnica 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 8. FORMULARIOS Y RESULTADOS */
+.form-card {
+    max-width: 700px;
+    margin: auto;
+    animation: entrarFormulario 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.form-card label,
+#formContacto label {
+    display: block;
+    margin: 18px 0 8px;
+    font-weight: bold;
+}
+
+.form-card .btn {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.form-card input,
+.form-card select {
+    transition: all 0.3s ease;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    box-shadow: 0 6px 20px rgba(232, 74, 138, 0.15);
+}
+
+.result-card {
+    max-width: 700px;
+    margin: 25px auto;
+    border-left: 5px solid var(--primary);
+}
+
+.result-card h2 {
+    margin-bottom: 12px;
+}
+
+.result-card .btn {
+    margin-top: 18px;
+}
+
+.notice {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 12px;
+    background: #fff0f7;
+}
+
+#resultadoEvaluacion:not([hidden]) {
+    animation: aparecerResultado 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+#textoRecomendacion p {
+    animation: fadeInText 0.5s ease-out both;
+}
+
+/* 9. PROGRESO */
+.stat-card {
+    text-align: center;
+    animation: entrarEstadistica 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.stat-card h2 {
+    color: var(--primary);
+    font-size: 2.3rem;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(128, 100, 216, 0.15);
+}
+
+.progress-card {
+    margin: 30px 0;
+    animation: entrarProgresoCard 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    transition: transform 0.3s ease;
+}
+
+.progress-card:hover {
+    transform: translateY(-4px);
+}
+
+.progress-track {
+    height: 16px;
+    overflow: hidden;
+    margin: 18px 0 10px;
+    border-radius: 20px;
+    background: #f1e5f0;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #e84a8a, #8064d8);
+    transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-item {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.progress-item:last-child {
+    border-bottom: 0;
+}
+
+.progress-item .btn {
+    margin-top: 10px;
+}
+
+.page-container > .card:not(.progress-card) {
+    animation: entrarMisCursos 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+/* 10. NOSOTROS */
+.about-card {
+    margin-bottom: 30px;
+}
+
+.about-card h2 {
+    margin: 22px 0 10px;
+}
+
+.about-card h2:first-child {
+    margin-top: 0;
+}
+
+.strengths {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.strengths span {
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: #fff0f7;
+    color: var(--primary-dark);
+}
+
+.team-card {
+    text-align: center;
+}
+
+.team-card img {
+    width: 100%;
+    height: 190px;
+    border-radius: 14px;
+    object-fit: cover;
+    background: #f6eaf2;
+}
+
+.team-card h3 {
+    font-size: 1rem;
+}
+
+/* 11. PIE DE PÁGINA */
+footer {
+    padding: 28px 20px;
+    background: #30263a;
+    color: #fff;
+    text-align: center;
+}
+
+footer p + p {
+    color: #d7cbdc;
+    font-size: 0.85rem;
+}
+
+/* 12. BUSCADOR */
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-results a {
+    display: block;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.search-results a:last-child {
+    border-bottom: none;
+}
+
+.search-results a:hover {
+    background: #f5f5f5;
+    color: #d63384;
+}
+
+.no-results {
+    padding: 12px 16px;
+    color: #888;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* 13. ANIMACIONES */
+@keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes entrarTexto {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes entrarTarjeta {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entrarMatematicas {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes entrarEspanol {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entrarCiencias {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entrarIngles {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes abrirLeccionUnica {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes entrarFormulario {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes aparecerResultado {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes entrarEstadistica {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes entrarProgresoCard {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes entrarMisCursos {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 14. DISEÑO RESPONSIVE */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 60px 7%;
+    }
+
+    .hero-card {
+        max-width: 500px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        padding: 25px 5%;
+    }
+
+    .hero-text,
+    .hero-card {
+        max-width: 100%;
+    }
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .navbar nav {
+        justify-content: center;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 550px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .navbar {
+        padding: 16px;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.3rem;
+    }
+
+    .section {
+        padding: 50px 6%;
+    }
+
+    .page-container {
+        padding: 40px 16px;
+    }
+
+    .cta {
+        margin: 20px 5% 45px;
+    }
+
+    .team-card img {
+        height: 240px;
+    }
+}
+
+/* Accesibilidad: reducir movimiento si el usuario lo solicita */
+@media (prefers-reduced-motion: reduce) {
+    body,
+    .hero-text,
+    .hero-card {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

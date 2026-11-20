@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi progreso | Regula T</title>
+    <link rel="icon" type="image/png" href="img/logoo.png">
+    <link rel="stylesheet" href="css/style_.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">Regula <span>T.</span></a>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="cursos.html">Cursos</a>
+        <a href="evaluacion.html">Evaluación</a>
+        <a href="progreso.html" class="active">Mi progreso</a>
+        <a href="nosotros.html">Nosotros</a>
+    </nav>
+</header>
+
+<main class="page-container">
+    <section class="page-heading">
+        <span class="etiqueta">CADA PASO CUENTA</span>
+        <h1>Mi progreso 📈</h1>
+        <p>Consulta tus avances y continúa aprendiendo.</p>
+    </section>
+
+    <section class="grid">
+        <article class="card stat-card">
+            <div class="icon">📚</div>
+            <h2 id="totalCursos">0</h2>
+            <p>Cursos iniciados</p>
+        </article>
+
+        <article class="card stat-card">
+            <div class="icon">🏆</div>
+            <h2 id="cursosTerminados">0</h2>
+            <p>Cursos completados</p>
+        </article>
+
+        <article class="card stat-card">
+            <div class="icon">✏️</div>
+            <h2 id="totalCuestionarios">0</h2>
+            <p>Cuestionarios realizados</p>
+        </article>
+    </section>
+
+    <section class="card progress-card">
+        <h2>Progreso general</h2>
+        <div class="progress-track">
+            <div id="barraProgreso" class="progress-fill"></div>
+        </div>
+        <p id="porcentajeProgreso">0% completado</p>
+    </section>
+
+    <section class="card">
+        <h2>Mis cursos</h2>
+        <div id="listaProgreso">
+            <p>Aún no has comenzado ningún curso.</p>
+        </div>
+    </section>
+
+    <button class="btn btn-danger" onclick="reiniciarProgreso()">
+        Reiniciar progreso
+    </button>
+</main>
+
+<footer>
+    <p>© 2026 Regula T | Proyecto Laboral</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regula T | Aprende a tu ritmo</title>
+    <link rel="icon" type="image/png" href="img/logoo.png">
+    <link rel="stylesheet" href="css/style_.css">
+    <!-- Vinculamos el script de búsqueda dinámico -->
+    <script src="js/search.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Regula T">
+    </a>
+
+    <nav>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="cursos.html">Cursos</a>
+        <a href="evaluacion.html">Evaluación</a>
+        <a href="progreso.html">Mi progreso</a>
+        <a href="nosotros.html">Nosotros</a>
+
+        <!-- CONTENEDOR DE LA BARRA DE BÚSQUEDA AGREGADO -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar..." onkeyup="ejecutarBusqueda()">
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-text">
+            <span class="etiqueta">TU ESPACIO DE APRENDIZAJE</span>
+            <h1>Aprende a tu ritmo,<br>
+                <span>mejora tus resultados.</span>
+            </h1>
+
+            <p>
+                Refuerza tus conocimientos con cursos, actividades
+                interactivas y clases diseñadas para ti.
+            </p>
+
+            <a href="evaluacion.html" class="btn">
+                Comenzar ahora →
+            </a>
+
+            <a href="cursos.html" class="btn btn-secundario">
+                Explorar cursos
+            </a>
+        </div>
+
+        <div class="hero-card">
+            <a href="index.html" class="logo">
+                <img src="img/11.jpeg" alt="Regula T">
+            </a>
+            <h2>Tu aprendizaje importa</h2>
+            <p>Aprende, practica y descubre todo lo que eres capaz de lograr.</p>
+            <div class="mini-stats">
+                <div><strong>4+</strong><small>Materias</small></div>
+                <div><strong>100%</strong><small>A tu ritmo</small></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Regula T | Proyecto Laboral</p>
+    <p>Aprende a tu ritmo, crece a tu manera.</p>
+</footer>
+
+</body>
+</html>
